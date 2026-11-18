@@ -17,7 +17,7 @@ permissions:
 jobs:
   followups:
     if: github.event.workflow_run.event == 'pull_request'
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     concurrency:
       group: ob1-pr-followups-${{ github.event.workflow_run.pull_requests[0].number || github.event.workflow_run.id }}
       cancel-in-progress: true
